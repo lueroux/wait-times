@@ -3,11 +3,126 @@
     <title>info-beamer Waiting Times</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="favicon.png" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
+      .video-container {
+    height: 1920px;
+    width: 1080px;
+    position: absolute;
+    background: url('https://tools.wickes.me/service-times/bg.jpg') 
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-container .twostroke {
+  z-index: 1;
+  position: relative;
+  top: 660px;
+  left: 470px;
+  text-align: left;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300 !important;
+  font-size: 48px;
+  font-style: normal;
+}
+
+.video-container .twostroke-sub {
+  z-index: 1;
+  position: relative;
+  top: 610px;
+  left: 470px;
+  text-align: left;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600 !important;
+  font-size: 56px;
+  font-style: normal;
+}
+
+.video-container .walkbehind {
+  z-index: 1;
+  position: relative;
+  top: 785px;
+  left: 470px;
+  text-align: left;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300 !important;
+  font-size: 41px;
+  font-style: normal;
+}
+
+.video-container .walkbehind-sub {
+  z-index: 1;
+  position: relative;
+  top: 735px;
+  left: 470px;
+  text-align: left;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600 !important;
+  font-size: 56px;
+  font-style: normal;
+}
+
+.video-container .rideon {
+  z-index: 1;
+  position: relative;
+  top: 910px;
+  left: 470px;
+  text-align: left;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300 !important;
+  font-size: 48px;
+  font-style: normal;
+}
+
+.video-container .rideon-sub {
+  z-index: 1;
+  position: relative;
+  top: 860px;
+  left: 470px;
+  text-align: left;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600 !important;
+  font-size: 56px;
+  font-style: normal;
+}
     </style>
   </head>
   <body>
     <div id='app'>
+        <div class="video-container">
+            <div class="twostroke">
+              <p>2-Stroke Machines</p>
+            </div>
+          <div class="twostroke-sub">
+              <p>[[Wait-TS]]</p>
+            </div>
+           <div class="walkbehind">
+              <p>Walk Behind Mowers</p>
+            </div>
+          <div class="walkbehind-sub">
+              <p>[[Wait-WB]]</p>
+            </div>
+           <div class="rideon">
+              <p>Ride-on Mowers</p>
+            </div>
+          <div class="rideon-sub">
+              <p>[[Wait-RO]]</p>
+            </div>
+        </div>
     </div>
   </body>
 </html>
