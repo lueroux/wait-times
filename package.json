@@ -1,0 +1,10 @@
+{
+    "name": "Wait Times",
+    "author": "Lue Roux <lue@lue.lol>",
+    "desc": "Display a waiting time list",
+    "platforms": ["pi/v6", "pi/v7", "pi/v8"],
+    "nesting": {
+        "parents": ["top-level"],
+        "childs": []
+    }
+}
