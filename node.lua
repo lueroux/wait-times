@@ -1,8 +1,8 @@
-gl.setup(1080, 1920)
+gl.setup(1920, 1080)  -- Swap width and height for the rotated display
 
 local menu, font, font_size, color
 local dots = resource.load_image "dots.png"
-local range_x1, range_x2
+local range_y1, range_y2  -- Adjusted for vertical display
 
 local function Resource()
     local res, nxt
@@ -32,33 +32,33 @@ util.json_watch("config.json", function(config)
     font = resource.load_font(config.font.asset_name)
     font_size = config.font_size
     items = config.items
-    range_x1 = config.text_range[1]
-    range_x2 = config.text_range[2]
+    range_y1 = config.text_range[1]  -- Adjusted for vertical display
+    range_y2 = config.text_range[2]  -- Adjusted for vertical display
 end)
 
 function node.render()
     background.draw(0, 0, WIDTH, HEIGHT)
-    local y = 50
+    local x = 50  -- Adjusted for vertical display
     for idx, item in ipairs(items) do
         if item.text == "" then
-            y = y + font_size*0.5
+            x = x + font_size * 0.5  -- Adjusted for vertical display
         elseif item.time == "" then
-            font:write(range_x1, y, item.text, font_size*1.2, color.r, color.g, color.b)
-            y = y + font_size*1.3
+            font:write(x, range_y1, item.text, font_size * 1.2, color.r, color.g, color.b)  -- Adjusted for vertical display
+            x = x + font_size * 1.3  -- Adjusted for vertical display
         else
-            local w = font:width(item.text, font_size)
-            font:write(range_x1, y, item.text, font_size, color.r, color.g, color.b, 0.8)
-            local x_start = range_x1+w+10
+            local h = font:height(item.text, font_size)  -- Adjusted for vertical display
+            font:write(x, range_y1, item.text, font_size, color.r, color.g, color.b, 0.8)  -- Adjusted for vertical display
+            local y_start = range_y1 + h + 10  -- Adjusted for vertical display
 
-            local w = font:width(item.time, font_size)
-            font:write(range_x2-w, y, item.time, font_size, color.r, color.g, color.b, 0.8)
+            local h = font:height(item.time, font_size)  -- Adjusted for vertical display
+            font:write(x, range_y2 - h, item.time, font_size, color.r, color.g, color.b, 0.8)  -- Adjusted for vertical display
 
-            local x_end = range_x2-w-10
+            local y_end = range_y2 - h - 10  -- Adjusted for vertical display
 
-            local w = x_end - x_start
-            w = w - (w % 20)
-            dots:draw(x_start, y+font_size-25, x_end, y+font_size-10, 0.8, 0, 0, 1/1080*w, 1)
-            y = y + font_size*1.05
+            local h = y_end - y_start  -- Adjusted for vertical display
+            h = h - (h % 20)  -- Adjusted for vertical display
+            dots:draw(x + font_size - 25, y_start, x + font_size - 10, y_end, 0.8, 0, 0, 1, 1/1080 * h)  -- Adjusted for vertical display
+            x = x + font_size * 1.05  -- Adjusted for vertical display
         end
     end
 end
