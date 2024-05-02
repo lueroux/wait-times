@@ -1,5 +1,5 @@
 {
-    "name": "Menu",
+    "name": "Wait-times",
     "options": [{
         "title": "Configuration",
         "type": "section"
@@ -9,7 +9,7 @@
         "name": "background",
         "type": "resource",
         "valid": ["image"],
-        "default": "dessert.jpg"
+        "default": "bg.jpg"
     }, {
         "title": "Text Area Space",
         "ui_width": 6,
@@ -50,7 +50,7 @@
     },
 
     {
-        "title": "Menu",
+        "title": "Wait Times",
         "type": "section"
     }, {
         "title": "Items",
@@ -63,14 +63,14 @@
             "name": "text",
             "type": "string",
             "placeholder": "Leave empty for separator",
-            "default": "Pizza"
+            "default": "Walk Behinds"
         }, {
-            "title": "Price",
+            "title": "Lead Time",
             "ui_width": 4,
-            "name": "price",
+            "name": "time",
             "type": "string",
-            "placeholder": "Leave empty for title",
-            "default": "2€"
+            "placeholder": "",
+            "default": "3 Weeks"
         }]
     }]
 }
